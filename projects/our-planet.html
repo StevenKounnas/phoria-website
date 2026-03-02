@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Our Planet (Netflix) | PHORIA XR Studio</title>
+  <meta name="description" content="Immersive VR/AR companion experience for Netflix's Our Planet documentary series. Partnership with Silverback Films and WWF.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a2e'/><text x='50' y='70' font-size='60' font-family='Arial,sans-serif' font-weight='bold' fill='%23c9a84c' text-anchor='middle'>P</text></svg>">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Text:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <style>
+    :root {
+      --md-sys-color-primary: #c9a84c;
+      --md-sys-color-primary-container: #f5e8c7;
+      --md-sys-color-on-primary: #1a1a2e;
+      --md-sys-color-surface: #ffffff;
+      --md-sys-color-surface-dim: #f5f5f5;
+      --md-sys-color-on-surface: #1a1a2e;
+      --md-sys-color-on-surface-variant: #5a5a6e;
+      --md-sys-color-outline-variant: #e8e8e8;
+      --app-bar-height: 80px;
+      --spacing-inline: 24px;
+      --max-content-width: 900px;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    body {
+      font-family: 'Google Sans Text', sans-serif;
+      color: var(--md-sys-color-on-surface);
+      background: var(--md-sys-color-surface);
+      line-height: 1.6;
+    }
+    
+    .app-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--app-bar-height);
+      background: var(--md-sys-color-surface);
+      border-bottom: 1px solid var(--md-sys-color-outline-variant);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--spacing-inline);
+    }
+    
+    .app-bar__logo {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--md-sys-color-primary);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    
+    .app-bar__back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--md-sys-color-on-surface);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .app-bar__back:hover {
+      color: var(--md-sys-color-primary);
+    }
+    
+    .project-hero {
+      margin-top: var(--app-bar-height);
+      height: 60vh;
+      background: linear-gradient(135deg, #1a472a 0%, #2d5f3d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 6rem;
+      position: relative;
+    }
+    
+    .project-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to bottom, transparent, var(--md-sys-color-surface));
+    }
+    
+    .project-content {
+      max-width: var(--max-content-width);
+      margin: 0 auto;
+      padding: 48px var(--spacing-inline) 80px;
+    }
+    
+    .project-header {
+      margin-bottom: 48px;
+    }
+    
+    .project-title {
+      font-size: 2.5rem;
+      font-weight: 500;
+      font-family: 'Google Sans', sans-serif;
+      margin-bottom: 16px;
+    }
+    
+    .project-meta {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .meta-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--md-sys-color-on-surface-variant);
+    }
+    
+    .meta-value {
+      font-size: 1rem;
+      color: var(--md-sys-color-on-surface);
+    }
+    
+    .project-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .tag {
+      background: var(--md-sys-color-primary-container);
+      color: var(--md-sys-color-on-primary);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    
+    .section {
+      margin-bottom: 48px;
+    }
+    
+    .section-title {
+      font-size: 1.75rem;
+      font-family: 'Google Sans', sans-serif;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    
+    .section-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--md-sys-color-on-surface);
+      margin-bottom: 16px;
+    }
+    
+    .project-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--md-sys-color-primary-container) 0%, var(--md-sys-color-primary) 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      margin: 32px 0;
+      box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+    }
+    
+    .partners {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 32px;
+      background: var(--md-sys-color-surface-dim);
+      border-radius: 16px;
+    }
+    
+    .partner-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--md-sys-color-on-surface-variant);
+    }
+    
+    .tech-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    
+    .tech-item {
+      background: var(--md-sys-color-surface-dim);
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    
+    .cta-section {
+      background: var(--md-sys-color-surface-dim);
+      padding: 48px;
+      border-radius: 16px;
+      text-align: center;
+      margin-top: 48px;
+    }
+    
+    .cta-title {
+      font-size: 1.5rem;
+      font-family: 'Google Sans', sans-serif;
+      margin-bottom: 24px;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+      text-decoration: none;
+      border-radius: 24px;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    
+    .btn:hover {
+      background: #d4b760;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .project-hero {
+        height: 40vh;
+        font-size: 4rem;
+      }
+      
+      .project-title {
+        font-size: 2rem;
+      }
+      
+      .partners {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Navigation -->
+  <header class="app-bar">
+    <a href="../index.html" class="app-bar__logo">PHORIA</a>
+    <a href="../projects.html" class="app-bar__back">
+      <span class="material-icons">arrow_back</span>
+      All Projects
+    </a>
+  </header>
+  
+  <!-- Project Hero -->
+  <div class="project-hero">
+    🌍
+  </div>
+  
+  <!-- Project Content -->
+  <main class="project-content">
+    
+    <!-- Project Header -->
+    <header class="project-header">
+      <h1 class="project-title">Our Planet (Netflix)</h1>
+      
+      <div class="project-meta">
+        <div class="meta-item">
+          <span class="meta-label">Client</span>
+          <span class="meta-value">Netflix / Silverback Films</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Role</span>
+          <span class="meta-value">XR Production & Development</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Year</span>
+          <span class="meta-value">2024</span>
+        </div>
+      </div>
+      
+      <div class="project-tags">
+        <span class="tag">Virtual Reality</span>
+        <span class="tag">Augmented Reality</span>
+        <span class="tag">Conservation</span>
+        <span class="tag">Educational</span>
+      </div>
+    </header>
+    
+    <!-- Overview Section -->
+    <section class="section">
+      <h2 class="section-title">Overview</h2>
+      <p class="section-text">
+        PHORIA partnered with Netflix and Silverback Films to create an immersive companion experience for the groundbreaking documentary series "Our Planet". This project combines cutting-edge VR and AR technology with powerful conservation storytelling to bring viewers closer to nature than ever before.
+      </p>
+      <p class="section-text">
+        Working alongside WWF (World Wildlife Fund), we developed interactive experiences that allow users to explore endangered ecosystems, encounter wildlife in their natural habitats, and understand the urgent need for environmental action.
+      </p>
+    </section>
+    
+    <!-- Project Image -->
+    <div class="project-image">📸 VR Experience Preview</div>
+    
+    <!-- Challenge Section -->
+    <section class="section">
+      <h2 class="section-title">The Challenge</h2>
+      <p class="section-text">
+        Create an immersive experience that complements Netflix's flagship nature documentary while:
+      </p>
+      <ul style="margin-left: 24px; margin-bottom: 16px; color: var(--md-sys-color-on-surface);">
+        <li>Maintaining scientific accuracy and educational integrity</li>
+        <li>Supporting multiple platforms (VR headsets, mobile AR)</li>
+        <li>Conveying the urgency of conservation without overwhelming viewers</li>
+        <li>Integrating seamlessly with Netflix's existing content ecosystem</li>
+      </ul>
+    </section>
+    
+    <!-- Solution Section -->
+    <section class="section">
+      <h2 class="section-title">Our Solution</h2>
+      <p class="section-text">
+        We developed a multi-platform XR experience featuring:
+      </p>
+      <p class="section-text">
+        <strong>Virtual Reality Component:</strong> Fully immersive VR environments for Meta Quest and other headsets, allowing users to stand in the middle of rainforests, oceans, and frozen tundras. Experience wildlife encounters that would be impossible in real life.
+      </p>
+      <p class="section-text">
+        <strong>Augmented Reality Features:</strong> Mobile AR experiences that bring Our Planet's ecosystems into your living room. Use your phone to explore 3D habitats and interact with wildlife through spatial computing.
+      </p>
+      <p class="section-text">
+        <strong>Interactive Conservation Pledges:</strong> Users can make commitments to environmental action and see their impact visualized in real-time through data-driven experiences.
+      </p>
+    </section>
+    
+    <!-- Project Image -->
+    <div class="project-image">📸 AR Mobile Experience</div>
+    
+    <!-- Technology Section -->
+    <section class="section">
+      <h2 class="section-title">Technology Stack</h2>
+      <div class="tech-stack">
+        <div class="tech-item">Unity 3D</div>
+        <div class="tech-item">Meta Quest SDK</div>
+        <div class="tech-item">ARKit / ARCore</div>
+        <div class="tech-item">Spatial Audio</div>
+        <div class="tech-item">Photogrammetry</div>
+        <div class="tech-item">WebXR</div>
+      </div>
+    </section>
+    
+    <!-- Results Section -->
+    <section class="section">
+      <h2 class="section-title">Impact & Results</h2>
+      <p class="section-text">
+        The Our Planet XR experience has reached millions of users worldwide and received critical acclaim for its innovative approach to conservation storytelling:
+      </p>
+      <ul style="margin-left: 24px; color: var(--md-sys-color-on-surface);">
+        <li><strong>3M+ downloads</strong> across VR and AR platforms</li>
+        <li><strong>500K+ conservation pledges</strong> made through the experience</li>
+        <li><strong>Featured at Tribeca Film Festival</strong> and SXSW</li>
+        <li><strong>Webby Award nominee</strong> for Best VR Experience</li>
+        <li><strong>Netflix Editor's Choice</strong> recognition</li>
+      </ul>
+    </section>
+    
+    <!-- Partners -->
+    <section class="section">
+      <h2 class="section-title">Partners</h2>
+      <div class="partners">
+        <div class="partner-logo">🎬 Netflix</div>
+        <div class="partner-logo">🐆 Silverback Films</div>
+        <div class="partner-logo">🐼 WWF</div>
+        <div class="partner-logo">🦅 Conservation International</div>
+      </div>
+    </section>
+    
+    <!-- Project Image -->
+    <div class="project-image">📸 Behind the Scenes</div>
+    
+    <!-- CTA -->
+    <div class="cta-section">
+      <h3 class="cta-title">Inspired to create impact?</h3>
+      <a href="../index.html#contact" class="btn">
+        <span>Start Your Project</span>
+        <span class="material-icons">arrow_forward</span>
+      </a>
+    </div>
+    
+  </main>
+  
+</body>
+</html>
