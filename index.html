@@ -11,21 +11,23 @@
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://phoria.com.au/">
+  <meta property="og:url" content="https://stevenkounnas.github.io/phoria-website/">
   <meta property="og:title" content="PHORIA | XR Studio">
   <meta property="og:description" content="Award-winning XR Studio crafting cutting-edge AR, VR, and MR productions for Apple Vision Pro and beyond.">
-  <meta property="og:image" content="/assets/images/phoria-og.png">
+  <meta property="og:image" content="https://stevenkounnas.github.io/phoria-website/images/logos/phoria-social-hero.png">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://phoria.com.au/">
+  <meta property="twitter:url" content="https://stevenkounnas.github.io/phoria-website/">
   <meta property="twitter:title" content="PHORIA | XR Studio">
   <meta property="twitter:description" content="Award-winning XR Studio crafting cutting-edge AR, VR, and MR productions for Apple Vision Pro and beyond.">
-  <meta property="twitter:image" content="/assets/images/phoria-og.png">
+  <meta property="twitter:image" content="https://stevenkounnas.github.io/phoria-website/images/logos/phoria-social-hero.png">
   <meta name="twitter:creator" content="@PHORIAMedia">
   
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a2e'/><text x='50' y='70' font-size='60' font-family='Arial,sans-serif' font-weight='bold' fill='%23c9a84c' text-anchor='middle'>P</text></svg>">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logos/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/logos/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logos/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   
   <!-- Fonts -->
@@ -337,12 +339,9 @@
     .project-card__image {
       width: 100%;
       aspect-ratio: 16/9;
-      background: linear-gradient(135deg, var(--md-sys-color-primary-container) 0%, var(--md-sys-color-primary) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--md-sys-color-on-primary);
-      font: var(--md-sys-typescale-headline-medium);
+      display: block;
+      overflow: hidden;
+      background: var(--md-sys-color-surface-dim);
     }
     
     .project-card__content {
@@ -482,7 +481,7 @@
   </header>
   
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" style="background-image: linear-gradient(rgba(26, 26, 46, 0.7), rgba(42, 42, 78, 0.8)), url('images/hero/hero-banner-top.jpg'); background-size: cover; background-position: center;">
     <div class="hero__content">
       <h1 class="hero__headline">Transforming Reality with Immersive Experiences</h1>
       <p class="hero__subheadline">Award-winning XR Studio crafting cutting-edge AR, VR, and MR productions for Apple Vision Pro and beyond</p>
@@ -560,9 +559,10 @@
     
     <div class="projects">
       <a href="projects/our-planet.html" class="project-card">
-        <div class="project-card__image">
-          🌍 Our Planet
-        </div>
+        <picture class="project-card__image">
+          <source srcset="images/projects/case-study-poster-thumb.webp" type="image/webp">
+          <img src="images/projects/case-study-poster-thumb.jpg" alt="Our Planet VR Experience" style="width: 100%; height: 100%; object-fit: cover;">
+        </picture>
         <div class="project-card__content">
           <h3 class="project-card__title">Our Planet (Netflix)</h3>
           <div class="project-card__tags">
@@ -575,9 +575,10 @@
       </a>
       
       <a href="projects/rewild.html" class="project-card">
-        <div class="project-card__image">
-          🦜 Rewild
-        </div>
+        <picture class="project-card__image">
+          <source srcset="images/projects/empty-phone-thumb.webp" type="image/webp">
+          <img src="images/projects/empty-phone-thumb.jpg" alt="Rewild Wildlife Conservation" style="width: 100%; height: 100%; object-fit: cover;">
+        </picture>
         <div class="project-card__content">
           <h3 class="project-card__title">Rewild</h3>
           <div class="project-card__tags">
@@ -590,9 +591,10 @@
       </a>
       
       <a href="projects/arup.html" class="project-card">
-        <div class="project-card__image">
-          🏗️ Arup
-        </div>
+        <picture class="project-card__image">
+          <source srcset="images/projects/hero-banner-bottom-thumb.webp" type="image/webp">
+          <img src="images/projects/hero-banner-bottom-thumb.jpg" alt="Arup Digital Twin" style="width: 100%; height: 100%; object-fit: cover;">
+        </picture>
         <div class="project-card__content">
           <h3 class="project-card__title">Arup Digital Twin</h3>
           <div class="project-card__tags">
@@ -605,9 +607,10 @@
       </a>
       
       <a href="projects/ecosphere.html" class="project-card">
-        <div class="project-card__image">
-          🌿 Ecosphere
-        </div>
+        <picture class="project-card__image">
+          <source srcset="images/projects/globe-5-thumb.webp" type="image/webp">
+          <img src="images/projects/globe-5-thumb.jpg" alt="Ecosphere AR Experience" style="width: 100%; height: 100%; object-fit: cover;">
+        </picture>
         <div class="project-card__content">
           <h3 class="project-card__title">Ecosphere</h3>
           <div class="project-card__tags">
