@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>PHORIA | XR Studio — Transforming Reality with Immersive Experiences</title>
+  <meta name="title" content="PHORIA | XR Studio — Transforming Reality with Immersive Experiences">
+  <meta name="description" content="Award-winning XR Studio crafting cutting-edge AR, VR, and MR productions for Apple Vision Pro. Digital twins, immersive installations, and spatial computing experiences.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://phoria.com.au/">
+  <meta property="og:title" content="PHORIA | XR Studio">
+  <meta property="og:description" content="Award-winning XR Studio crafting cutting-edge AR, VR, and MR productions for Apple Vision Pro and beyond.">
+  <meta property="og:image" content="/assets/images/phoria-og.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://phoria.com.au/">
+  <meta property="twitter:title" content="PHORIA | XR Studio">
+  <meta property="twitter:description" content="Award-winning XR Studio crafting cutting-edge AR, VR, and MR productions for Apple Vision Pro and beyond.">
+  <meta property="twitter:image" content="/assets/images/phoria-og.png">
+  <meta name="twitter:creator" content="@PHORIAMedia">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a2e'/><text x='50' y='70' font-size='60' font-family='Arial,sans-serif' font-weight='bold' fill='%23c9a84c' text-anchor='middle'>P</text></svg>">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Text:wght@400;500&family=Google+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PHORIA",
+    "alternateName": "Phoria XR Studio",
+    "url": "https://phoria.com.au",
+    "logo": "https://phoria.com.au/assets/images/phoria-logo.svg",
+    "description": "Award-winning XR Studio crafting cutting-edge AR, VR, and MR productions",
+    "sameAs": [
+      "https://twitter.com/PHORIAMedia"
+    ]
+  }
+  </script>
+  
+  <style>
+    /* Material Design 3 Design Tokens */
+    :root {
+      /* Phoria Brand Colors */
+      --md-sys-color-primary: #c9a84c;
+      --md-sys-color-primary-container: #f5e8c7;
+      --md-sys-color-on-primary: #1a1a2e;
+      --md-sys-color-on-primary-container: #1a1a2e;
+      
+      --md-sys-color-surface: #ffffff;
+      --md-sys-color-surface-dim: #f5f5f5;
+      --md-sys-color-surface-container: #f9f9f9;
+      --md-sys-color-on-surface: #1a1a2e;
+      --md-sys-color-on-surface-variant: #5a5a6e;
+      
+      --md-sys-color-background: #ffffff;
+      --md-sys-color-on-background: #1a1a2e;
+      
+      --md-sys-color-outline: #d0d0d0;
+      --md-sys-color-outline-variant: #e8e8e8;
+      
+      /* Typography */
+      --md-sys-typescale-display-large: 400 3.562rem/4rem 'Google Sans', sans-serif;
+      --md-sys-typescale-display-medium: 400 2.812rem/3.25rem 'Google Sans', sans-serif;
+      --md-sys-typescale-display-small: 400 2.25rem/2.75rem 'Google Sans', sans-serif;
+      --md-sys-typescale-headline-large: 400 2rem/2.5rem 'Google Sans', sans-serif;
+      --md-sys-typescale-headline-medium: 400 1.75rem/2.25rem 'Google Sans', sans-serif;
+      --md-sys-typescale-headline-small: 500 1.5rem/2rem 'Google Sans', sans-serif;
+      --md-sys-typescale-title-large: 400 1.375rem/1.75rem 'Google Sans', sans-serif;
+      --md-sys-typescale-title-medium: 500 1rem/1.5rem 'Google Sans Text', sans-serif;
+      --md-sys-typescale-body-large: 400 1rem/1.5rem 'Google Sans Text', sans-serif;
+      --md-sys-typescale-body-medium: 400 0.875rem/1.25rem 'Google Sans Text', sans-serif;
+      --md-sys-typescale-label-large: 500 0.875rem/1.25rem 'Google Sans Text', sans-serif;
+      
+      /* Layout */
+      --app-bar-height: 80px;
+      --spacing-inline: 24px;
+      --max-content-width: 1200px;
+      
+      /* Elevation */
+      --md-sys-elevation-1: 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 4px rgba(0, 0, 0, 0.06);
+      --md-sys-elevation-2: 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 8px rgba(0, 0, 0, 0.06);
+      --md-sys-elevation-3: 0px 4px 8px rgba(0, 0, 0, 0.08), 0px 8px 16px rgba(0, 0, 0, 0.06);
+      
+      /* Corner Radius */
+      --md-sys-shape-corner-small: 8px;
+      --md-sys-shape-corner-medium: 12px;
+      --md-sys-shape-corner-large: 16px;
+      --md-sys-shape-corner-extra-large: 28px;
+    }
+    
+    @media (max-width: 768px) {
+      :root {
+        --app-bar-height: 64px;
+        --spacing-inline: 16px;
+      }
+    }
+    
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    body {
+      font: var(--md-sys-typescale-body-large);
+      color: var(--md-sys-color-on-background);
+      background: var(--md-sys-color-background);
+      line-height: 1.6;
+    }
+    
+    /* Navigation */
+    .app-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--app-bar-height);
+      background: var(--md-sys-color-surface);
+      border-bottom: 1px solid var(--md-sys-color-outline-variant);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--spacing-inline);
+    }
+    
+    .app-bar__logo {
+      font: var(--md-sys-typescale-title-large);
+      font-weight: 700;
+      color: var(--md-sys-color-primary);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    
+    .app-bar__nav {
+      display: flex;
+      gap: 32px;
+    }
+    
+    .app-bar__nav a {
+      font: var(--md-sys-typescale-label-large);
+      color: var(--md-sys-color-on-surface);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .app-bar__nav a:hover {
+      color: var(--md-sys-color-primary);
+    }
+    
+    /* Hero Section */
+    .hero {
+      margin-top: var(--app-bar-height);
+      min-height: calc(100vh - var(--app-bar-height));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%);
+      color: white;
+      position: relative;
+      overflow: hidden;
+      padding: var(--spacing-inline);
+    }
+    
+    .hero__content {
+      max-width: var(--max-content-width);
+      text-align: center;
+      z-index: 1;
+    }
+    
+    .hero__headline {
+      font: var(--md-sys-typescale-display-medium);
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+    
+    .hero__subheadline {
+      font: var(--md-sys-typescale-headline-small);
+      margin-bottom: 48px;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero__ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 32px;
+      font: var(--md-sys-typescale-label-large);
+      text-decoration: none;
+      border-radius: var(--md-sys-shape-corner-large);
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .btn--primary {
+      background: var(--md-sys-color-primary);
+      color: var(--md-sys-color-on-primary);
+    }
+    
+    .btn--primary:hover {
+      background: #d4b760;
+      box-shadow: var(--md-sys-elevation-2);
+    }
+    
+    .btn--secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .btn--secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+    
+    /* Section Container */
+    .section {
+      padding: 80px var(--spacing-inline);
+      max-width: calc(var(--max-content-width) + (var(--spacing-inline) * 2));
+      margin: 0 auto;
+    }
+    
+    .section__header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    
+    .section__title {
+      font: var(--md-sys-typescale-headline-large);
+      margin-bottom: 16px;
+    }
+    
+    .section__subtitle {
+      font: var(--md-sys-typescale-body-large);
+      color: var(--md-sys-color-on-surface-variant);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Capabilities Grid */
+    .capabilities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    
+    .capability-card {
+      background: var(--md-sys-color-surface-container);
+      border-radius: var(--md-sys-shape-corner-large);
+      padding: 32px;
+      transition: all 0.2s;
+    }
+    
+    .capability-card:hover {
+      box-shadow: var(--md-sys-elevation-2);
+      transform: translateY(-2px);
+    }
+    
+    .capability-card__icon {
+      width: 48px;
+      height: 48px;
+      background: var(--md-sys-color-primary-container);
+      border-radius: var(--md-sys-shape-corner-medium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: var(--md-sys-color-primary);
+    }
+    
+    .capability-card__title {
+      font: var(--md-sys-typescale-title-medium);
+      margin-bottom: 8px;
+    }
+    
+    .capability-card__description {
+      font: var(--md-sys-typescale-body-medium);
+      color: var(--md-sys-color-on-surface-variant);
+    }
+    
+    /* Projects Grid */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    
+    .project-card {
+      background: var(--md-sys-color-surface);
+      border-radius: var(--md-sys-shape-corner-extra-large);
+      overflow: hidden;
+      box-shadow: var(--md-sys-elevation-1);
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    
+    .project-card:hover {
+      box-shadow: var(--md-sys-elevation-3);
+      transform: translateY(-4px);
+    }
+    
+    .project-card__image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--md-sys-color-primary-container) 0%, var(--md-sys-color-primary) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--md-sys-color-on-primary);
+      font: var(--md-sys-typescale-headline-medium);
+    }
+    
+    .project-card__content {
+      padding: 24px;
+    }
+    
+    .project-card__title {
+      font: var(--md-sys-typescale-title-large);
+      margin-bottom: 8px;
+    }
+    
+    .project-card__tags {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    
+    .tag {
+      font: var(--md-sys-typescale-label-large);
+      background: var(--md-sys-color-primary-container);
+      color: var(--md-sys-color-on-primary-container);
+      padding: 4px 12px;
+      border-radius: 16px;
+      font-size: 0.75rem;
+    }
+    
+    .project-card__description {
+      font: var(--md-sys-typescale-body-medium);
+      color: var(--md-sys-color-on-surface-variant);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%);
+      color: white;
+      text-align: center;
+      padding: 80px var(--spacing-inline);
+    }
+    
+    .cta-section__title {
+      font: var(--md-sys-typescale-display-small);
+      margin-bottom: 16px;
+    }
+    
+    .cta-section__subtitle {
+      font: var(--md-sys-typescale-headline-small);
+      margin-bottom: 32px;
+      opacity: 0.9;
+    }
+    
+    /* Footer */
+    .footer {
+      background: var(--md-sys-color-surface-dim);
+      padding: 48px var(--spacing-inline);
+    }
+    
+    .footer__content {
+      max-width: var(--max-content-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 48px;
+    }
+    
+    .footer__section h3 {
+      font: var(--md-sys-typescale-title-medium);
+      margin-bottom: 16px;
+    }
+    
+    .footer__section ul {
+      list-style: none;
+    }
+    
+    .footer__section a {
+      font: var(--md-sys-typescale-body-medium);
+      color: var(--md-sys-color-on-surface-variant);
+      text-decoration: none;
+      display: block;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+    
+    .footer__section a:hover {
+      color: var(--md-sys-color-primary);
+    }
+    
+    .footer__bottom {
+      text-align: center;
+      padding-top: 32px;
+      margin-top: 32px;
+      border-top: 1px solid var(--md-sys-color-outline-variant);
+      font: var(--md-sys-typescale-body-medium);
+      color: var(--md-sys-color-on-surface-variant);
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .app-bar__nav {
+        display: none;
+      }
+      
+      .hero__headline {
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
+      
+      .hero__subheadline {
+        font-size: 1.125rem;
+      }
+      
+      .section {
+        padding: 48px var(--spacing-inline);
+      }
+      
+      .capabilities {
+        grid-template-columns: 1fr;
+      }
+      
+      .projects {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Navigation -->
+  <header class="app-bar">
+    <a href="/" class="app-bar__logo">PHORIA</a>
+    <nav class="app-bar__nav">
+      <a href="#work">Work</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero__content">
+      <h1 class="hero__headline">Transforming Reality with Immersive Experiences</h1>
+      <p class="hero__subheadline">Award-winning XR Studio crafting cutting-edge AR, VR, and MR productions for Apple Vision Pro and beyond</p>
+      <div class="hero__ctas">
+        <a href="#work" class="btn btn--primary">Explore Our Work</a>
+        <a href="#contact" class="btn btn--secondary">Start a Project</a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Capabilities Section -->
+  <section id="capabilities" class="section">
+    <header class="section__header">
+      <h2 class="section__title">Our Capabilities</h2>
+      <p class="section__subtitle">We create immersive experiences that transform how people interact with technology and the world around them</p>
+    </header>
+    
+    <div class="capabilities">
+      <div class="capability-card">
+        <div class="capability-card__icon">
+          <span class="material-icons">vr_headset</span>
+        </div>
+        <h3 class="capability-card__title">Virtual Reality</h3>
+        <p class="capability-card__description">Fully immersive VR experiences for training, entertainment, and exploration. Built for Meta Quest, Apple Vision Pro, and more.</p>
+      </div>
+      
+      <div class="capability-card">
+        <div class="capability-card__icon">
+          <span class="material-icons">filter_center_focus</span>
+        </div>
+        <h3 class="capability-card__title">Augmented Reality</h3>
+        <p class="capability-card__description">AR overlays that enhance the physical world with digital content. From mobile AR to spatial computing on Apple Vision Pro.</p>
+      </div>
+      
+      <div class="capability-card">
+        <div class="capability-card__icon">
+          <span class="material-icons">view_in_ar</span>
+        </div>
+        <h3 class="capability-card__title">Mixed Reality</h3>
+        <p class="capability-card__description">Blended digital-physical experiences that respond to your environment. Leading the way in spatial computing.</p>
+      </div>
+      
+      <div class="capability-card">
+        <div class="capability-card__icon">
+          <span class="material-icons">home_work</span>
+        </div>
+        <h3 class="capability-card__title">Digital Twins</h3>
+        <p class="capability-card__description">Virtual replicas for simulation, optimization, and visualization. Enterprise solutions for architecture, engineering, and manufacturing.</p>
+      </div>
+      
+      <div class="capability-card">
+        <div class="capability-card__icon">
+          <span class="material-icons">museum</span>
+        </div>
+        <h3 class="capability-card__title">XR Installations</h3>
+        <p class="capability-card__description">Large-scale immersive installations for events, museums, and public spaces. Creating memorable brand experiences.</p>
+      </div>
+      
+      <div class="capability-card">
+        <div class="capability-card__icon">
+          <span class="material-icons">language</span>
+        </div>
+        <h3 class="capability-card__title">Spatial Computing</h3>
+        <p class="capability-card__description">Next-generation interfaces for Apple Vision Pro and beyond. Designing for the future of human-computer interaction.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Work Section -->
+  <section id="work" class="section" style="background: var(--md-sys-color-surface-dim);">
+    <header class="section__header">
+      <h2 class="section__title">Featured Work</h2>
+      <p class="section__subtitle">Showcasing our award-winning projects across VR, AR, and spatial computing</p>
+    </header>
+    
+    <div class="projects">
+      <a href="projects/our-planet.html" class="project-card">
+        <div class="project-card__image">
+          🌍 Our Planet
+        </div>
+        <div class="project-card__content">
+          <h3 class="project-card__title">Our Planet (Netflix)</h3>
+          <div class="project-card__tags">
+            <span class="tag">VR Experience</span>
+            <span class="tag">Conservation</span>
+            <span class="tag">Netflix</span>
+          </div>
+          <p class="project-card__description">Immersive companion experience for Netflix's groundbreaking documentary series, in partnership with Silverback Films and WWF.</p>
+        </div>
+      </a>
+      
+      <a href="projects/rewild.html" class="project-card">
+        <div class="project-card__image">
+          🦜 Rewild
+        </div>
+        <div class="project-card__content">
+          <h3 class="project-card__title">Rewild</h3>
+          <div class="project-card__tags">
+            <span class="tag">VR/AR</span>
+            <span class="tag">Wildlife</span>
+            <span class="tag">Education</span>
+          </div>
+          <p class="project-card__description">Interactive wildlife conservation experience featuring endangered Hornbill species. Raising awareness through immersive storytelling.</p>
+        </div>
+      </a>
+      
+      <a href="projects/arup.html" class="project-card">
+        <div class="project-card__image">
+          🏗️ Arup
+        </div>
+        <div class="project-card__content">
+          <h3 class="project-card__title">Arup Digital Twin</h3>
+          <div class="project-card__tags">
+            <span class="tag">Digital Twin</span>
+            <span class="tag">Enterprise</span>
+            <span class="tag">Architecture</span>
+          </div>
+          <p class="project-card__description">Enterprise XR solution for global engineering firm Arup. Revolutionizing how architects and engineers visualize projects.</p>
+        </div>
+      </a>
+      
+      <a href="projects/ecosphere.html" class="project-card">
+        <div class="project-card__image">
+          🌿 Ecosphere
+        </div>
+        <div class="project-card__content">
+          <h3 class="project-card__title">Ecosphere</h3>
+          <div class="project-card__tags">
+            <span class="tag">AR</span>
+            <span class="tag">Environmental</span>
+            <span class="tag">Education</span>
+          </div>
+          <p class="project-card__description">Environmental education platform bringing ecosystems to life through augmented reality. Making climate action tangible.</p>
+        </div>
+      </a>
+    </div>
+    
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="projects.html" class="btn btn--primary">View All Projects</a>
+    </div>
+  </section>
+  
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2 class="cta-section__title">Ready to Transform Your Vision into Reality?</h2>
+    <p class="cta-section__subtitle">Let's create something extraordinary together</p>
+    <div>
+      <a href="#contact" class="btn btn--primary">Start a Project</a>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer__content">
+      <div class="footer__section">
+        <h3>PHORIA</h3>
+        <p>Award-winning XR Studio</p>
+        <p style="margin-top: 12px; font-size: 0.875rem; color: var(--md-sys-color-on-surface-variant);">Transforming reality through immersive experiences</p>
+      </div>
+      
+      <div class="footer__section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#work">Our Work</a></li>
+          <li><a href="#capabilities">Capabilities</a></li>
+          <li><a href="projects.html">All Projects</a></li>
+          <li><a href="#about">About Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer__section">
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="https://twitter.com/PHORIAMedia" target="_blank" rel="noopener">Twitter @PHORIAMedia</a></li>
+          <li><a href="mailto:hello@phoria.com.au">hello@phoria.com.au</a></li>
+          <li><a href="#contact">Contact Form</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer__section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#capabilities">Virtual Reality</a></li>
+          <li><a href="#capabilities">Augmented Reality</a></li>
+          <li><a href="#capabilities">Mixed Reality</a></li>
+          <li><a href="#capabilities">Digital Twins</a></li>
+          <li><a href="#capabilities">Spatial Computing</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer__bottom">
+      <p>&copy; 2026 PHORIA Studios Pty Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offsetTop = target.offsetTop - parseInt(getComputedStyle(document.documentElement).getPropertyValue('--app-bar-height'));
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+  
+</body>
+</html>
